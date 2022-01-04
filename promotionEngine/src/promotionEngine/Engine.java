@@ -47,10 +47,28 @@ public class Engine {
 			}
 		}
 		// Set Active Promotions
-		int totalPriceA = (countA / 3) * 130 + (countA % 3 * priceA);
+		/*
+		 * 3 of A's for 130
+		   2 of B's for 45 
+		   C & D for 30
+
+		 */
+		//3 pack for 130, then sum up the remaining value
+		//Example : countA = 10, 10 / 3 * 130 + (10 % 3 * 50) = 390 + 50, total 440
+		int totalPriceA = (countA / 3) * 130 + (countA % 3 * priceA); 
+		
+		
+		//2 pack for 45, then sum up the remaining value
+		//Example : countB = 10, 10 / 2 * 45 + (10 % 2 * 30) = 225 + 0, total 225
 		int totalPriceB = (countB / 2) * 45 + (countB % 2 * priceB);
+		
+		
 		int totalPriceC = countC * priceC;
 		int totalPriceD = countD * priceD;
+		// Check C and D qty, 
+		//Example1 : C=1 D=1 -> 30
+		//Example2 : C=2 D=1 , C is bigger then D and C,D is greater than or equal to 1
+		//           Check C or D lowest-valued number, use the min number to count -5   (30-(20+15) = -5)
 		if(countC >= 1 && countD>=1) {
 			int countmax = Math.min(countC, countD);
 			for(int i=0; i<countmax;i++) {
