@@ -2,6 +2,9 @@ package promotionEngine;
 
 import java.util.*;
 
+import org.junit.runner.*;
+import org.junit.runner.notification.*;
+
 public class Engine {
 
 	public static void main(String[] args) {
@@ -9,7 +12,7 @@ public class Engine {
 		List<Product> products = new ArrayList<Product>();
 		Scanner inputObj = new Scanner(System.in);
 		String[] prod_array = {"A","B","C","D"};
-		for(int j = 0 ; j<4; j++) {
+		for(int j = 0 ; j<prod_array.length; j++) {
 			System.out.print("Enter quantity of product ID "+prod_array[j]+" : ");
 			int qty = inputObj.nextInt();
 			
@@ -24,6 +27,8 @@ public class Engine {
 		System.out.println("Total : "+totalPrice);
 		
 	}
+	
+	
 	public static int calcTotalPrice(List<Product> products) {
 		
 		int countA = 0, priceA = 50;
