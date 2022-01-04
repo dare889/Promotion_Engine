@@ -6,3 +6,4 @@ promotionEngine/bin/promotionEngine/Engine.class
 promotionEngine/bin/promotionEngine/Product.class
 promotionEngine/src/promotionEngine/Engine.java
 promotionEngine/src/promotionEngine/Product.java
+promotionEngine/src/promotionEngine/test.java
